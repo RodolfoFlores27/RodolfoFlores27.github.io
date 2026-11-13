@@ -35,6 +35,40 @@
       margin-right: 18px;
       margin-bottom: 8px;
     }
+
+    .practice-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+    
+    .practice-card {
+      padding: 16px;
+      border: 1px solid #d9e2ef;
+      border-radius: 10px;
+    }
+    
+    .practice-card h3 {
+      margin-top: 8px;
+      color: #17365d;
+    }
+    
+    .practice-tool {
+      margin: 0;
+      font-size: 0.9rem;
+      font-weight: bold;
+      color: #52657d;
+    }
+    
+    @media (max-width: 620px) {
+      body {
+        margin: 28px auto;
+      }
+    
+      .practice-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
@@ -67,6 +101,44 @@
       </div>
     </section>
 
+    <section>
+      <h2>Supplementary Guided Practice Projects</h2>
+      <p>
+        These earlier guided, code-along projects helped me practice individual
+        analytics tools. They complement my featured end-to-end project.
+      </p>
+    
+      <div class="practice-grid">
+        <article class="practice-card">
+          <p class="practice-tool">Google Sheets</p>
+          <h3>CRM Sales Performance Dashboard</h3>
+          <p>Explore quarterly sales opportunities and win rates by agent, office, and manager.</p>
+          <a href="https://github.com/RodolfoFlores27/CRM-Sales-Performance-Dashboard-Google_Sheets">View project on GitHub</a>
+        </article>
+    
+        <article class="practice-card">
+          <p class="practice-tool">Power BI</p>
+          <h3>LEGO Set Explorer</h3>
+          <p>Explore LEGO sets by theme, age range, and price, with a supplementary decomposition-tree view.</p>
+          <a href="https://github.com/RodolfoFlores27/LEGO-Set-Explorer-PowerBI">View project on GitHub</a>
+        </article>
+    
+        <article class="practice-card">
+          <p class="practice-tool">Microsoft Excel</p>
+          <h3>Coffee Shop Sales Dashboard</h3>
+          <p>Explore coffee shop sales trends by date, time, product, category, and store location.</p>
+          <a href="https://github.com/RodolfoFlores27/Coffee-Shop-Sales-Dashboard-MS_Excel">View project on GitHub</a>
+        </article>
+    
+        <article class="practice-card">
+          <p class="practice-tool">SQL</p>
+          <h3>Baby Name Trends Analysis</h3>
+          <p>Analyze U.S. baby-name popularity from 1980 to 2009, including changes over time and regional patterns.</p>
+          <a href="https://github.com/RodolfoFlores27/Baby-Name-Trends-Analysis-SQL">View project on GitHub</a>
+        </article>
+      </div>
+    </section>
+    
     <section>
       <h2>About</h2>
       <p>
