@@ -4,14 +4,14 @@
 
 ## At a Glance
 
-- **Business question:** [Write the question this project investigates.]
-- **Outcome measured:** [Describe the 30-day qualifying activity outcome.]
-- **Data and tools:** [Summarize the synthetic data and tools used.]
-- **Deliverables:** [Link to the Tableau dashboard and project README.]
+- **Business question:** How did qualifying-activity rates compare between Treatment and Holdout customers across the three synthetic campaigns?
+- **Outcome measured:** Whether a customer completed at least one qualifying activity within 30 days after campaign assignment.
+- **Data and tools:** Synthetic customer, campaign, assignment, and activity-event data; Salesforce, Excel, Databricks SQL, Tableau Public, and AI-assisted query development.
+- **Deliverables:** [View the Tableau dashboard](https://public.tableau.com/app/profile/rodolfo.flores4240/viz/CustomerLifecycleCampaignEffectiveness/CustomerLifecycleCampaignEffectiveness) · [View the project repository](https://github.com/RodolfoFlores27/customer-lifecycle-campaign-effectiveness)
 
 ## Project Context and My Role
 
-[Explain that this was a guided portfolio project. Describe the tasks you personally completed, where you used AI assistance, and how you checked the results.]
+This was a guided portfolio project using synthetic data. I configured the Salesforce campaigns and imported the synthetic records, mapped customer and campaign IDs in Excel, loaded and checked the CSVs in Databricks, and used Databricks SQL—with AI assistance—to prepare and verify the campaign and lifecycle summaries. I built and published the Tableau Public dashboard, then checked its values against the analysis outputs. I used guidance and AI assistance to interpret the results and refine the case study; the data does not establish how real campaigns would perform or prove causal impact.
 
 ## Workflow
 
@@ -21,7 +21,6 @@
 - **What I did:** A customer qualifies if they had at least one `account_login`, `repeat_account_use`, or `self_service_action` event within 30 days after assignment.
 - **Key decision or check:** Use all assigned customers in each group as the denominator, including customers with no qualifying event.
 - **Output:** A qualifying-activity rate for each group and the treatment-minus-holdout difference for each campaign.
-- **Evidence image and caption:** [Add later.]
 
 ### 2. Configure the CRM Workflow in Salesforce
 
@@ -29,7 +28,6 @@
 - **What I did:** Imported 1,200 Contacts, configured three Campaigns, and imported 1,200 Campaign Members with the project’s Holdout, Treatment Delivered, and Treatment Not Delivered statuses.
 - **Key decision or check:** The contact, campaign, campaign member, and status totals matched the expected counts.
 - **Output:** Each campaign had 400 members, split between 200 Holdout and 200 Treatment assignments.
-- **Evidence image and caption:** [Add later.]
 
 ### 3. Map Records in Excel
 
