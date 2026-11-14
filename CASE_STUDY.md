@@ -57,7 +57,13 @@
 - **What I did:** Loaded the original synthetic customer, campaign, assignment, and event CSVs into Databricks and created tables. These CSVs were loaded separately from Salesforce; they were not Salesforce exports.
 - **Key decision or check:** Checked expected row counts and relationships, compared campaign metadata with Salesforce, and inspected duplicate event IDs. After removing one exact duplicate, the event table had 8,500 rows and 8,500 distinct event IDs.
 - **Output:** Validated tables ready for analysis.
-- **Evidence image and caption:** [Add later.]
+- **Evidence image and caption:**
+
+#### Databricks event data validation
+
+![Databricks query confirming event table row counts and required fields](images/case-study/03-databricks-event-id-check.png)
+
+*The check returned 8,500 rows and 8,500 distinct event IDs, with no missing event dates or engagement flags.*
 
 ### 5. Analyze Campaign Results with SQL
 
@@ -65,7 +71,13 @@
 - **What I did:** In Databricks SQL, joined assignments to activity events, counted qualifying events within 30 days after assignment, and calculated group rates and treatment-minus-holdout lift. I also calculated approximate Bonferroni-adjusted 95% confidence intervals for the three campaign comparisons and prepared lifecycle-segment summaries.
 - **Key decision or check:** Used the defined qualifying event types and all assigned customers as each group’s denominator. Checked the query outputs against the expected results. The assignments were balanced but not genuinely randomized, so describe these as comparisons in synthetic data rather than proof of causal impact.
 - **Output:** Campaign-level and lifecycle-segment summary tables, exported as CSVs for Tableau.
-- **Evidence image and caption:** [Add later.]
+- **Evidence image and caption:**
+
+#### Campaign lift and confidence intervals
+
+![Databricks SQL query and results for campaign lift and adjusted confidence intervals](images/case-study/04-databricks-campaign-lift-ci.png)
+
+*The query compared treatment and holdout qualifying activity rates and calculated campaign lift with Bonferroni-adjusted confidence intervals.*
 
 ### 6. Present the Results in Tableau
 
@@ -73,7 +85,19 @@
 - **What I did:** Imported the campaign-level and lifecycle-segment summary CSVs into Tableau Public. Built views for Holdout versus Treatment activity rates by campaign, campaign lift with adjusted confidence intervals, and activity rates by campaign and lifecycle stage. Combined them into the dashboard and published it to Tableau Public.
 - **Key decision or check:** Verified the chart values, number formats, and tooltips against the Databricks summaries; checked that the published dashboard opens publicly.
 - **Output:** The public Tableau dashboard: https://public.tableau.com/app/profile/rodolfo.flores4240/viz/CustomerLifecycleCampaignEffectiveness/CustomerLifecycleCampaignEffectiveness
-- **Evidence image and caption:** [Add later.]
+- **Evidence image and caption:**
+
+#### Overall campaign results
+
+![Tableau dashboard showing campaign qualifying activity rates and adjusted confidence intervals](images/case-study/05a-tableau-campaign-results.png)
+
+*The dashboard summarizes qualifying activity rates for treatment and holdout groups and shows the estimated lift and adjusted confidence intervals.*
+
+#### Results by campaign and lifecycle stage
+
+![Tableau chart comparing qualifying activity rates by campaign and lifecycle stage](images/case-study/05b-tableau-lifecycle-results.png)
+
+*Lifecycle-stage results are descriptive; the dormant onboarding group is especially small.*
 
 ## Findings
 
