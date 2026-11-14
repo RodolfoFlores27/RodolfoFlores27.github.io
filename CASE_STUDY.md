@@ -37,7 +37,19 @@
 - **What I did:** Used the Salesforce Contact and Campaign ID exports with `AssignmentsContactsCampaigns.xlsx` to map the assignments and prepare the Campaign Member import CSV.
 - **Key decision or check:** Confirmed the lookups and mapping checks matched the expected records.
 - **Output:** A mapped CSV ready for the Salesforce Campaign Member import.
-- **Evidence image and caption:** [Add later.]
+- **Evidence image and caption:**
+
+#### Salesforce Campaign ID mapping
+
+![Salesforce report showing the campaign ID mapping](images/case-study/01-salesforce-campaign-id-crosswalk.png)
+
+*The Salesforce report provided the Campaign ID mappings used to prepare the assignment import.*
+
+#### Excel customer ID mapping
+
+![Excel sheet matching synthetic customer IDs to Salesforce Contact IDs](images/case-study/02-excel-id-mapping.png)
+
+*XLOOKUP matched synthetic customer IDs to Salesforce Contact IDs; the campaign mappings and statuses were used to prepare the Campaign Member import.*
 
 ### 4. Load and Validate Data in Databricks
 
